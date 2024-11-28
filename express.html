@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Train Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Express Train Management</h1>
+        <nav>
+            <button onclick="showSection('train-schedule')">Train Schedule</button>
+            <button onclick="showSection('book-ticket')">Book Ticket</button>
+            <button onclick="showSection('view-bookings')">View Bookings</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Train Schedule Section -->
+        <section id="train-schedule" class="active-section">
+            <h2>Train Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Train Number</th>
+                        <th>Name</th>
+                        <th>Route</th>
+                        <th>Arrival</th>
+                        <th>Seats Available</th>
+                    </tr>
+                </thead>
+                <tbody id="train-list"></tbody>
+            </table>
+        </section>
+
+        <!-- Book Ticket Section -->
+        <section id="book-ticket">
+            <h2>Book Ticket</h2>
+            <form id="booking-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="from-station">From:</label>
+                <select id="from-station" required></select>
+                <label for="to-station">To:</label>
+                <select id="to-station" required></select>
+                <button type="button" id="find-train">Find Train</button>
+                <div id="train-search-results"></div>
+                <label for="train-number">Train Number:</label>
+                <input type="number" id="train-number" required>
+                <label for="seats">Number of Tickets:</label>
+                <input type="number" id="seats" required>
+                <button type="submit">Book Ticket</button>
+            </form>
+        </section>
+
+        <!-- View Bookings Section -->
+        <section id="view-bookings">
+            <h2>Your Bookings</h2>
+            <ul id="booking-list"></ul>
+        </section>
+    </main>
+    <button><a href="index.html" class="main">Back</a></button>
+    <script src="script.js"></script>
+</body>
+</html>
